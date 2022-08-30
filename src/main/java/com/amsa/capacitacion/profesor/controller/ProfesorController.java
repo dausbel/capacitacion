@@ -27,7 +27,7 @@ import java.util.List;
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 @RequestMapping("api/profesor")
 @RestController
-@Validated
+
 public class ProfesorController {
     
     private final ProfesorService profesorService;
