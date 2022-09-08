@@ -16,4 +16,8 @@ public interface ProfesorService {
     
     void deleteProfesor(Long profesorId);
     
+    Long findProfesorByName(String profesorName);
+    
+    String profesorNamebyId(Long id);
+    
 }

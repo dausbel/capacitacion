@@ -47,6 +47,11 @@ public class ExceptionHandlerApp extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(ErrorMensaje.builder().mensaje(ex.getMessage()).build(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
     
+    @ExceptionHandler(value = {MappingException.class,CursoException.class })
+    public ResponseEntity<Object> handleMappingException(Exception ex, WebRequest request) {
+        return new ResponseEntity<>(ErrorMensaje.builder().mensaje(ex.getMessage()).build(), HttpStatus.BAD_REQUEST);
+    }
+    
     
     @Override
     protected final ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
